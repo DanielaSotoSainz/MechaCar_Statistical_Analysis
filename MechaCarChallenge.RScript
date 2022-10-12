@@ -1,5 +1,6 @@
 #Load the dplyr package.
-library()
+library(magrittr)
+library(dplyr) 
 
 #Import the csv file to a dataframe.
 mecha_car <- read.csv(file='MechaCar_mpg.csv',check.names=F,stringsAsFactors = F)
@@ -9,3 +10,20 @@ lm(mpg  ~  vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + 
 
 #Obtain the summary (p-value and r-squared value).
 summary(lm(mpg  ~  vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD,mecha_car))
+
+----
+
+#Import the csv file to a dataframe.
+suspension_coil <- read.csv(file='Suspension_Coil.csv',check.names=F,stringsAsFactors = F)
+
+#Obtain the mean, median, variance, standar deviation. 
+mean = mean(suspension_coil$PSI)
+median = median(suspension_coil$PSI)
+variance = var(suspension_coil$PSI)
+SD = sd(suspension_coil$PSI)
+
+#Create total_summary dataframe.
+total_summary <- data.frame(mean, median, variance, SD)
+
+#Create lot_summary dataframe.
+lot_summary <- suspension_coil %>% group_by(Manufacturing_Lot) %>% summarize(mean= mean(PSI), median= median(PSI), variance=var(PSI), SD=sd(PSI), .groups = 'keep')
