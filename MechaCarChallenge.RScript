@@ -1,3 +1,5 @@
+#Deliverable 1
+
 #Load the dplyr package.
 library(magrittr)
 library(dplyr) 
@@ -13,6 +15,8 @@ summary(lm(mpg  ~  vehicle_length + vehicle_weight + spoiler_angle + ground_clea
 
 ----
 
+#Deliverable 2
+
 #Import the csv file to a dataframe.
 suspension_coil <- read.csv(file='Suspension_Coil.csv',check.names=F,stringsAsFactors = F)
 
@@ -27,3 +31,15 @@ total_summary <- data.frame(mean, median, variance, SD)
 
 #Create lot_summary dataframe.
 lot_summary <- suspension_coil %>% group_by(Manufacturing_Lot) %>% summarize(mean= mean(PSI), median= median(PSI), variance=var(PSI), SD=sd(PSI), .groups = 'keep')
+
+----
+
+#Deliverable 3
+
+#t.test for all PSI.
+t.test((suspension_coil$PSI),mu= 1500)
+
+#t.test for each PSI.
+t.test(subset(suspension_coil, Manufacturing_Lot== "Lot1")$PSI,mu= 1500)
+t.test(subset(suspension_coil, Manufacturing_Lot== "Lot2")$PSI,mu= 1500)
+t.test(subset(suspension_coil, Manufacturing_Lot== "Lot3")$PSI,mu= 1500)
