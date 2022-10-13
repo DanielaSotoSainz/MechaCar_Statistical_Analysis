@@ -63,4 +63,13 @@ The next 3 Images represent the results of the t-test of each lot individually. 
 
 ## Study Design: MechaCar vs Competition
 
+The next study was designed to analyze the statistical data from MechaCar to know how the model performs compared to the competition. Some consumers focus on the acceleration capability, price, safety, fuel efficiency, among others. In the next study, the main aspect for the analysis will be acceleration capability.
+The metrics used are acceleration capability as a dependent variable, and engine output, car dimension, driver skills, transmission and electronic control unit as independent variables. The next step consists in the creation of a null and alternative hypothesis.
+Ho: The acceleration capability is a final result of the combination of the engine output, car dimension, driver skills, transmission and electronic control unit.
+Ha: The acceleration capability is not a final result of the combination of the engine output, car dimension, driver skills, transmission and electronic control unit.
+The test required to analyze the data and verify the hypothesis could be a t-test to compare the final acceleration of the MechaCar with other models. A multiple linear regression could also help to see which combination of factors and which factor have more impact on the acceleration. The data needed for the statistical analysis required a combination of different tests to obtain the final acceleration with different combinations and different car models.
+
+References:
+Kunanoppadol, J. (2012, April 11). The Concept to Measure the Overall Car Performance. Thailand; Silpakorn Automotive Research and Technology.
+https://www.thaiscience.info/Journals/Article/JSMU/10887835.pdf
 
